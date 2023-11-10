@@ -1,0 +1,28 @@
+<div *ngIf="product" class="w-full flex items-center flex-col">
+  <h1 class="border-b-4 text-5xl text-dark-grey p-2 border-red h-fit w-fit">
+    {{ product.name }}
+  </h1>
+  <div class="flex gap-3 items-center flex-col w-full mt-6">
+    <div class="border-b border-grey w-80 p-4 ">
+      <div class="flex justify-between">
+        <div>
+          <p>Product Code: </p>
+          <p>Availability: </p>
+        </div>
+        <div>
+          <p class="text-black font-extrabold">{{product.id}}</p>
+          <p class="text-black font-extrabold">{{product.availability}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-b border-grey w-80 p-4">
+      <p class="text-red text-5xl font-extrabold">
+        {{ product.price | currency }}
+      </p>
+    </div>
+    <div class="border-b border-grey w-80 p-4">
+
+    </div>
+  </div>
+</div>

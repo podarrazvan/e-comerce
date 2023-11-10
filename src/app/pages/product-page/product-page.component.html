@@ -1,0 +1,11 @@
+<ng-container *ngIf="product">
+  <div class="flex gap-3 flex-col items-center sm:items-start sm:flex-row">
+    <ecomerce-product-page-gallery
+      [product]="product"
+    ></ecomerce-product-page-gallery>
+    <ecomerce-product-page-info
+      [product]="product"
+      class="w-full"
+    ></ecomerce-product-page-info>
+  </div>
+</ng-container>
