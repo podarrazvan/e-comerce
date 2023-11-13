@@ -1,0 +1,17 @@
+<ng-container *ngIf="product">
+  <a [routerLink]="['/product', product.id]" class="flex bg-white items-center">
+    <img
+      [src]="product.mainImage"
+      [alt]="product.name"
+      loading="lazy"
+      class="object-cover h-20 sm:h-28"
+    />
+    <div>
+      <ecomerce-ellipsis-text
+        [text]="product.name!"
+        [numberOfRows]="2"
+      ></ecomerce-ellipsis-text>
+      <p class="text-red">{{ product.price | currency }}</p>
+    </div>
+  </a>
+</ng-container>

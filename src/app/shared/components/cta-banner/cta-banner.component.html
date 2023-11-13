@@ -1,0 +1,22 @@
+<div class="max-w-full overflow-hidden relative">
+  <div class="flex w-full h-full justify-between items-center relative z-20">
+    <img [src]="banner.image" alt="" class="max-w-[75%]" />
+    <div class="w-full flex flex-col items-center justify-center">
+      <ecomerce-ellipsis-text
+        class="text-white p-3"
+        [lineHeight]="28"
+        [text]="banner.text"
+        [numberOfRows]="5"
+      >
+      </ecomerce-ellipsis-text>
+      <!-- <p class="text-white p-3">{{ banner.text }}</p> -->
+      <!-- <div [innerHTML]="banner.text" class="overflow-auto"></div> -->
+      <button class="bg-red main-btn" (click)="onClick.emit()">
+        {{ banner.btnText }}
+      </button>
+    </div>
+  </div>
+  <div class="bg-black z-10 absolute opacity-75 inset-0 w-full">
+    <img [src]="banner.image" class="w-full blur-3xl absolute top-0" />
+  </div>
+</div>

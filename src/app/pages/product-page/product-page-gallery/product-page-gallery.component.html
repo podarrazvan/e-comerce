@@ -20,7 +20,10 @@
     />
   </div>
 </ng-container>
-<ecomerce-popup *ngIf="showImgPopup && product" (closePopup)="showImgPopup = false">
+<ecomerce-popup
+  *ngIf="showImgPopup && product"
+  (closePopup)="showImgPopup = false"
+>
   <img
     [src]="product.images![selectedImageIndex]"
     [alt]="product.name"

@@ -1,0 +1,25 @@
+<div *ngIf="showEllipsis; else noEllipsis">
+  <div class="relative">
+    <div
+      [style.max-height]="height + 'px'"
+      [ellipsis]="readMore ? '... Show more' : '...'"
+      (ellipsis-change)="ellipsisChanged($event)"
+    >
+      <div [innerHTML]="sanitizedHtmlContent"></div>
+    </div>
+    <div
+      *ngIf="textTruncated && readMore"
+      (click)="
+        $event.preventDefault(); $event.stopPropagation(); showEllipsis = false
+      "
+      class="absolute right-0 bottom-0 pl-2 cursor-pointer z-[2]"
+    >
+      Show more
+    </div>
+  </div>
+</div>
+
+<ng-template #noEllipsis>
+  <div [innerHTML]="sanitizedHtmlContent"></div>
+  <button (click)="showEllipsis = true">Show less</button>
+</ng-template>

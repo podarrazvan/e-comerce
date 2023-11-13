@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "ecomerce",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -100,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a7836188-ae5d-4754-ac95-5d7ddef490ba"
   }
 }

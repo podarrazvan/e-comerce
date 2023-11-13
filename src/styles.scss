@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+// Tailwind
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+//Styles
+@import "./app/shared/styles/input";
+@import "./app/shared/styles/buttons";
+@import "./app/shared/styles/borders";
+
+* {
+  margin: 0;
+  font-size: 0.75rem;
+}
+@media (min-width: 768px) {
+  * {
+    font-size: 1rem;
+  }
+}

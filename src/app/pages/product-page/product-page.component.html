@@ -1,11 +1,35 @@
 <ng-container *ngIf="product">
-  <div class="flex gap-3 flex-col items-center sm:items-start sm:flex-row">
+  <div
+    class="flex gap-3 flex-col items-center sm:items-start sm:flex-row sm:mt-20 p-2"
+  >
     <ecomerce-product-page-gallery
       [product]="product"
     ></ecomerce-product-page-gallery>
     <ecomerce-product-page-info
       [product]="product"
-      class="w-full"
+      class="w-full sm:pl-14"
     ></ecomerce-product-page-info>
+    <div class="w-full flex justify-center border gap-3 border-grey p-2">
+      <div class="w-80">
+        <div *ngFor="let product of recommendedProducts; let last = last">
+          <ecomerce-simple-product-card
+            class="w-full"
+            [product]="product"
+          ></ecomerce-simple-product-card>
+
+          <!-- Add border only if it's not the last element -->
+          <div *ngIf="!last" class="border-b border-grey"></div>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="w-full flex justify-center">
+    <h2
+      class="border-b-4 text-2xl text-dark-grey p-2 border-red h-fit w-fit z-10"
+    >
+      Description
+    </h2>
+  </div>
+  <div class="w-full border-b-4 border-grey relative bottom-1"></div>
+  <div [innerHTML]="sanitized(product.description!)" class="p-8"></div>
 </ng-container>

@@ -1,0 +1,14 @@
+<ecomerce-cta-banner
+  *ngFor="let banner of banners"
+  [banner]="banner"
+></ecomerce-cta-banner>
+<div class="flex w-full justify-center mt-3 mb-3">
+  <div
+    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
+  >
+    <ecomerce-main-product-card
+      *ngFor="let product of products"
+      [product]="product"
+    ></ecomerce-main-product-card>
+  </div>
+</div>
