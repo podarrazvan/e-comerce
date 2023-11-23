@@ -31,7 +31,11 @@
             placeholder="Quantity"
           />
 
-          <button class="main-btn bg-red" [disabled]="!formGroup.valid">
+          <button
+            class="main-btn bg-red"
+            [disabled]="!formGroup.valid"
+            (click)="addToCart()"
+          >
             Add to cart
           </button>
         </div>

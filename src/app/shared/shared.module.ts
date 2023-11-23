@@ -10,6 +10,7 @@ import { CurrencyPipe } from './pipes/currency.pipe';
 import { RouterModule } from '@angular/router';
 import { PopupComponent } from './components/popup/popup.component';
 import { SimpleProductCardComponent } from './components/simple-product-card/simple-product-card.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const COMPONENTS = [
   NavigationComponent,
@@ -19,6 +20,7 @@ const COMPONENTS = [
   CurrencyPipe,
   PopupComponent,
   SimpleProductCardComponent,
+  FooterComponent,
 ];
 
 @NgModule({
