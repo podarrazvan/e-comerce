@@ -1,0 +1,60 @@
+<div
+  *ngIf="cartService.getCart() | async as cart"
+  class="p-3 h-full flex flex-col justify-center min-h-[500px]"
+>
+  <div class="flex justify-between w-full" *ngIf="cart.length > 0">
+    <div>
+      <div class="w-full flex justify-center relative top-[2px] z-10">
+        <h2 class="border-red border-b-4 p-2 text-2xl">Where</h2>
+      </div>
+      <form
+      [formGroup]="formGroup"
+        class="border border-grey p-2 w-full max-w-xs sm:max-w-xl flex flex-col gap-3"
+      >
+        <div class="flex gap-3 w-full">
+          <input class="input w-full" placeholder="First Name" formControlName="firstName" />
+          <input class="input w-full" placeholder="Last Name" formControlName="lastName" />
+        </div>
+        <div class="flex gap-3 w-full">
+          <input class="input w-full" placeholder="Zip code" formControlName="zipCode" />
+          <input class="input w-full" placeholder="City" formControlName="country" />
+          <input class="input w-full" placeholder="Country" formControlName="state" />
+          <input class="input w-full" placeholder="State" formControlName="address" />
+        </div>
+        <input class="input w-full" placeholder="Address" formControlName="address" />
+
+        <div class="flex gap-3 w-full">
+          <input class="input w-full" placeholder="Phone Number" formControlName="phoneNumber" />
+          <input class="input w-full" placeholder="E-mail" formControlName="email" />
+        </div>
+      </form>
+    </div>
+    <div class="w-full max-w-md">
+      <div class="w-full flex justify-center relative top-[2px] z-10">
+        <h2 class="border-red border-b-4 p-2 text-2xl">What</h2>
+      </div>
+      <div class="border border-grey p-2">
+        <ecomerce-cart-item
+          *ngFor="let item of cart"
+          [item]="item"
+        ></ecomerce-cart-item>
+        <div class="border-t border-grey">
+          <div class="w-full flex justify-center pb-4">
+            <h2 class="border-red border-b-4 text-xl">Summary</h2>
+          </div>
+          <div class="flex justify-around">
+            <p class="text-2xl">Total:</p>
+            <p class="text-2xl">{{ cartTotal(cart) | currency }}</p>
+          </div>
+          <button class="main-btn bg-red w-full mt-10" [disabled]="!this.formGroup.valid">Buy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2
+    *ngIf="cart.length === 0"
+    class="w-full text-center text-4xl text-dark-grey"
+  >
+    Your cart is empty
+  </h2>
+</div>

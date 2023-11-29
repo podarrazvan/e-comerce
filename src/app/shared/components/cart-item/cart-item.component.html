@@ -1,0 +1,14 @@
+<div class="flex justify-around items-center" *ngIf="item">
+  <img
+    [src]="item?.mainImage"
+    [alt]="item?.name"
+    loading="lazy"
+    class="object-cover h-16"
+  />
+  <div>
+    <p>{{ item?.name }}</p>
+    <p>Quantity: {{ item?.quantity }}</p>
+    <p>Total: {{ +item.price * +item.quantity | currency }}</p>
+  </div>
+  <button class="h-fit" (click)="removeItem()">X</button>
+</div>

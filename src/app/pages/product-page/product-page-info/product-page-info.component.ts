@@ -33,17 +33,17 @@ export class ProductPageInfoComponent {
   }
 
   addToCart(): void {
-    if (!this.formGroup.valid) {
+    if (!this.formGroup.valid || !this.product) {
       return;
     }
     const cart = this.cartService.getCartValue() || [];
     const index = cart.findIndex((item: any) => item.id === this.product?.id);
     if (index === -1) {
       cart.push({
-        id: this.product?.id,
-        name: this.product?.name,
-        price: this.product?.price,
-        mainImage: this.product?.mainImage,
+        id: this.product?.id!,
+        name: this.product?.name!,
+        price: this.product?.price!,
+        mainImage: this.product?.mainImage!,
         quantity: +this.formGroup.value.quantity,
       });
     } else {

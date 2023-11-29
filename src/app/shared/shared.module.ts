@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { PopupComponent } from './components/popup/popup.component';
 import { SimpleProductCardComponent } from './components/simple-product-card/simple-product-card.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
 
 const COMPONENTS = [
   NavigationComponent,
@@ -21,6 +22,7 @@ const COMPONENTS = [
   PopupComponent,
   SimpleProductCardComponent,
   FooterComponent,
+  CartItemComponent
 ];
 
 @NgModule({

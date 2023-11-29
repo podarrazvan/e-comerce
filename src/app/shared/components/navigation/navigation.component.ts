@@ -20,9 +20,12 @@ export class NavigationComponent {
 
   removeItem(index: number): void {
     const currentCart = this.cartService.getCartValue();
-  const cart = [...currentCart];
-  cart.splice(index, 1);
-  this.cartService.setCart(cart);
-  this.showCart = cart.length !== 0;
+    if (!currentCart) {
+      return;
+    }
+    const cart = [...currentCart];
+    cart.splice(index, 1);
+    this.cartService.setCart(cart);
+    this.showCart = cart.length !== 0;
   }
 }

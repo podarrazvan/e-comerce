@@ -20,22 +20,16 @@
         </p>
         <fa-icon [icon]="cart" class="mt-1"></fa-icon>
       </button>
-      <ul *ngIf="showCart" class="absolute top-12 bg-white p-2 w-72 ">
-        <li *ngFor="let item of cartService.getCart() | async; let i = index" class="flex justify-around items-center">
-          <img [src]="item.mainImage" [alt]="item.name"   loading="lazy"
-          class="object-cover h-16"/>
-          <div>
-            <p>{{ item.name }}</p>
-            <p>Quantity: {{ item.quantity }}</p>
-            <p>Total: {{ +item.price * +item.quantity | currency }}</p>
-          </div>
-          <button class="h-fit" (click)="removeItem(i)">X</button>
+      <ul *ngIf="showCart" class="absolute top-12 bg-white p-2 w-72 z-50 rounded-xl">
+        <li *ngFor="let item of cartService.getCart() | async; let i = index">
+         <ecomerce-cart-item [item]="item"></ecomerce-cart-item>
         </li>
-        <li *ngIf="(cartService.getCart() | async)?.length === 0">
+
+        <li *ngIf="(cartService.getCart() | async)?.length === 0 || !(cartService.getCart() | async)">
           <p class="text-center">Your cart is empty.</p>
         </li>
         <li>
-          <button class="bg-red main-btn w-full mt-2" [disabled]="(cartService.getCart() | async)?.length === 0">Buy</button>
+          <button class="bg-red main-btn w-full mt-2" [disabled]="(cartService.getCart() | async)?.length === 0 || !(cartService.getCart() | async)" [routerLink]="['checkout']" (click)="showCart = false" >Buy</button>
         </li>
       </ul>
     </div>
