@@ -45,6 +45,7 @@ export class ProductPageInfoComponent {
         price: this.product?.price!,
         mainImage: this.product?.mainImage!,
         quantity: +this.formGroup.value.quantity,
+        shipping: +this.product?.shipping!,
       });
     } else {
       cart[index].quantity += +this.formGroup.value.quantity;

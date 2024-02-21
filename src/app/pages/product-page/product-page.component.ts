@@ -27,6 +27,8 @@ export class ProductPageComponent {
     <p>Nullam sed condimentum lectus. Phasellus eu fringilla dolor, at eleifend orci. Sed viverra sollicitudin est ac mollis. Integer in erat at urna tincidunt euismod. Donec eu quam feugiat, luctus orci et, volutpat purus. Aenean eu ipsum augue. Pellentesque eget nibh vitae urna sodales consequat at sed neque. Etiam sagittis, justo in lacinia pulvinar, leo lectus iaculis nunc, nec malesuada odio lorem non justo. Integer eget tellus magna. Vestibulum vel ullamcorper eros. Aenean nec dictum nibh.</p>
     <p>Suspendisse turpis magna, euismod a finibus in, fringilla et dolor. Maecenas volutpat cursus laoreet. Nulla sed mi velit. Aliquam vitae neque ut arcu tincidunt dignissim non in orci. Etiam vestibulum volutpat fringilla. Pellentesque sit amet arcu gravida, aliquam tellus eu, viverra arcu. Phasellus placerat et orci ac condimentum. In laoreet a purus et tempus. Duis eget nunc lacus. Vivamus sodales lacus ut nibh porttitor consequat. Donec feugiat a sapien eget tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ac ipsum quis nulla congue consectetur. Fusce iaculis aliquam dictum. Aliquam massa risus, laoreet ut leo vel, efficitur dictum ligula. In tincidunt mattis leo, a vehicula est malesuada quis.</p>
     <h1>&nbsp;</h1>`,
+    shipping: 39,
+    shippingDays: 14,
   };
 
   recommendedProducts = [
